@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+<script src="https://kit.fontawesome.com/39dce68ee5.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
+
+        *{
+            font-family: 'DM Sans', sans-serif;
+            
+        }
+        #cartbox {
+            height: auto;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            width: 700px;
+            justify-content: center;
+            margin: auto;
+        }
+
+        #one {
+            /* border: 1px solid lightslategray; */
+            text-align: center;
+            line-height: 20px;
+            margin-bottom: 15px;
+            
+        }
+        #one > h1{
+            color: rgb(52, 53, 56);
+        }
+        #one > p1{
+            color: rgb(165, 167, 170);
+        }
+
+        #two {
+            display: flex;
+            border-bottom: 1px solid rgb(246, 247, 248);
+            border-top: 1px solid rgb(246, 247, 248);
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10px;
+        }
+        #two p{
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(52, 53, 56);
+            margin: 3px;
+        }
+
+        #three {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 3px solid rgb(246, 247, 248);
+        }
+
+        #three>div {
+            display: flex;
+            align-items: center;
+        }
+
+        .imgSec{
+            margin-left: 25px;
+        }
+       .imgSec img{
+           width: 80px;
+       }
+       #container{
+           position: relative;
+       }
+        #container>div {
+            display: flex;
+            height: 140px;
+            justify-content: flex-start;
+            border-bottom: 1px solid rgb(246, 247, 248);
+        }
+        .cartImg{
+            width: 80px;
+            padding: 20px;
+        }
+        .contentBox{
+            margin-top: 20px;
+            margin-left: 10px;
+            width: 100%;
+            display: flex;
+            /* border: 1px solid blue; */
+            justify-content: space-between;
+        }
+        .nameBox{
+            width: 100%;
+            /* border: 1px solid blue; */
+            margin-right: 10px;
+        }
+        .itemValue{
+            display: flex;
+            justify-content: space-between;
+        }
+        .itemValue div:first-child p:first-child{
+            font-size: 20px;
+            margin: 0;
+        }
+        .itemValue div:first-child p:last-child{
+            margin: 0;
+            color: rgb(165, 167, 170);
+        }
+        .itemValue div:last-child{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(117, 117, 117);
+            border: 1.5px solid rgb(221, 224, 227);
+            border-radius: 5px;
+            height: 45px;
+            width: 70px;
+            font-size: 25px;
+            font-weight: 500;
+            margin-left: 30px;
+        }
+        .visible{
+            display: flex;
+        }
+        .hidden{
+            display: none;
+        }
+        .incDec{
+            position: absolute;
+            /* display: flex; */
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            right: 72px;
+            z-index: 2;
+            width: 150px;
+            height: 55px;
+            border: 1.5px solid rgb(221, 224, 227);
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: rgb(117, 117, 117) 0px 0px 10px;
+        }
+        .incDecMinus{
+            text-align: center;
+            width: 32%;
+            color: rgb(67, 176, 42);
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .incDecMinus:hover{
+            background-color: rgb(248, 237, 237);
+        }
+        .incDecMiddle{
+            font-size: 20px;
+            color: rgb(165, 167, 170);
+        }
+        .incDecPlus{
+            text-align: center;
+            width: 32%;
+            color: rgb(67, 176, 42);
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .incDecPlus:hover{
+            background-color: rgb(248, 237, 237);
+        }
+        .priceBox{
+            text-align: center;
+            font-size: 20px;
+            color: rgb(165, 167, 170);
+            width: 130px;
+        }
+
+        .removeItem{
+            display: flex;
+        }
+        .iconBoth{
+            display: flex;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        .iconBoth div{
+            color: rgb(67, 176, 42);
+            font-size: 25px;
+        }
+        .iconBoth p{
+            margin: 0;
+            margin-top: 2px;
+            margin-left: 10px;
+            color: rgb(117, 117, 117);
+        }
+        .emptyDiv{
+            background-color: rgb(246, 247, 248);
+            height: 30px;
+        }
+        .farm {
+            padding: 15px 20px;
+        }
+
+        .farm div {
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(50, 50, 50);
+            margin: 3px;
+        }
+        .farm span{
+            color: rgb(117, 117, 117);
+            font-size: 18px;
+            margin: 3px;
+        }
+
+        .payAmt {
+            margin-right: 20px;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .final {
+            color: aliceblue;
+            background-color: green;
+            width: 700px;
+            height: 40px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .final a {
+            color: white;
+            font-size: 20px;
+
+        }
+        .blue{
+            display: flex;
+            align-items: center;
+        }
+        .blue svg{
+            fill: rgb(43, 120, 198);
+        }
+        .blue p{
+            color: rgb(43, 120, 198);
+            font-size: 15px;
+            line-height: 18px;
+            font-weight: 600;
+            margin: 3px;
+            margin-left: 6px;
+        }
+
+        .total {
+            color: rgb(255, 35, 35);
+            font-size: 20px;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        .pname {
+            font-size: 15px;
+            margin-left: 50px;
+            margin-top: 30px;
+
+        }
+
+        .inndiv {
+            margin-top: 7px;
+            justify-items: end;
+        }
+
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+
+        }
+
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: green;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px green;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        button{
+            border: 0;
+            background-color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="cartbox">
+        <div id="one">
+            <h1>YOUR WISHLISTS</h1>
+           <p> Enjoy Luxurious shopping...</p>
+            <img src="https://spareshub.com/pub/media/logo/stores/1/200x50xlogo.png.pagespeed.ic.3_mBb67eog.webp" alt="">
+        </div>
+             <div style="margin:auto;margin-left:25%;"> <img style="height: 270px;width: 400px;" src="https://images.pexels.com/photos/1149137/pexels-photo-1149137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            <p style="text-align: center;border: 1px solid black;border-width: 5px;margin: 0px 5px;">ITEM NAME:TOYOTA ENGINE PARTS</p>
+                
+                <p  style="text-align: center;border: 1px solid black;border-width: 1px;margin: 0px 5px">PRICE: <b>689<i class="fas fa-dollar-sign"></i></b></p>
+   </div>
+            
+        
+            <p style="text-align: center">Make This Order a gift <i class="fas fa-gifts"></i></p>
+            
+
+          <center><a href="checkout.html"><input style="margin: 5px;padding: 2px;" type="submit" value="GO TO CHECKOUT"></a></center>
+
+</body>
+
+</html>
+
+<script>
+    document.querySelector('.final').addEventListener('click', goDeliveryFun);
+    var payAmt = document.querySelector('#payAmt');
+    var cartData = JSON.parse(localStorage.getItem("cartItem")) || [];
+
+    function displayCart(){
+        document.querySelector("#container").innerHTML = '';
+        cartData.map(function (elem, index) {
+        var box = document.createElement("div");
+        var img = document.createElement("img");
+        img.src = elem.elem.image;
+        img.setAttribute("class", "cartImg");
+
+        var imgBox = document.createElement("div");
+        imgBox.append(img);
+        var contentBox = document.createElement("div");
+        contentBox.setAttribute("class", "contentBox");
+        var nameBox = document.createElement("div");
+        nameBox.setAttribute("class", "nameBox");
+        var itemValue = document.createElement("div");
+        itemValue.setAttribute('class','itemValue');
+        var itemName = document.createElement('div');
+        var nameItem = document.createElement('p');
+        nameItem.innerText = elem.elem.name;
+        var qtyItem = document.createElement('p');
+        qtyItem.innerText = elem.elem.qty;
+        itemName.append(nameItem, qtyItem);
+        var itemCount= document.createElement('div');
+        itemCount.innerText = elem.count;
+        
+        var incDec = document.createElement('div');
+        incDec.setAttribute('class', 'incDec hidden');
+        var incDecMinus = document.createElement('button')
+        incDecMinus.innerText = '-';
+        incDecMinus.addEventListener('click', ()=>{
+            funIncMinus(elem, index, itemCount, incDecMiddle)
+        })
+        incDecMinus.setAttribute('class', 'incDecMinus');
+        var incDecMiddle = document.createElement('div')
+        incDecMiddle.setAttribute('class','incDecMiddle');
+        incDecMiddle.innerText = `${elem.count} ct`;
+        var incDecPlus = document.createElement('button')
+        incDecPlus.innerText = '+';
+        incDecPlus.addEventListener('click', ()=>{
+            funIncPlus(elem, index, itemCount, incDecMiddle);
+        })
+        
+        incDecPlus.setAttribute('class', 'incDecPlus');
+        incDec.append(incDecMinus,incDecMiddle,incDecPlus);
+        itemCount.onmouseover = function(){onMouseOver(incDec)};
+        incDecPlus.onmouseover = function(){onMouseOver(incDec)};
+        incDecMinus.onmouseover = function(){onMouseOver(incDec)};
+        incDecMiddle.onmouseover = function(){onMouseOver(incDec)};
+        incDec.onmouseout = function(){onMouseOut(incDec)};
+        itemCount.onmouseout = function(){onMouseOut(incDec)};
+        incDecPlus.onmouseout = function(){onMouseOut(incDec)};
+        incDecMinus.onmouseout = function(){onMouseOut(incDec)};
+        incDecMiddle.onmouseout = function(){onMouseOut(incDec)};
+        itemValue.append(itemName, itemCount);
+        var removeItem = document.createElement("div");
+        removeItem.setAttribute('class', 'removeItem');
+        
+        var iconBoth = document.createElement('div')
+        iconBoth.addEventListener('click', ()=>{
+            removeItem1(elem,index);
+        })
+        iconBoth.setAttribute('class', 'iconBoth');
+        var icon1 = document.createElement('div')
+        icon1.innerHTML = '<i class="fa fa-trash-o" aria-hidden="true"></i>';
+        var icon1Name = document.createElement('p');
+        icon1Name.textContent = 'Remove';
+        iconBoth.append(icon1,icon1Name)
+        removeItem.append(iconBoth);
+        nameBox.append(itemValue,removeItem);
+        var priceBox = document.createElement("div");
+        var price = document.createElement("p");
+        price.innerText = `$${elem.elem.price}`;
+        priceBox.setAttribute("class", "priceBox");
+        priceBox.append(price)
+        contentBox.append(nameBox,priceBox);
+        box.append(incDec,imgBox, contentBox);
+        document.querySelector("#container").append(box);
+        subTotolItem();
+    });
+    }
+    function removeItem1(elem, index) {
+        cartData.splice(index, 1);
+        localStorage.setItem("cartItem", JSON.stringify(cartData));
+        displayCart();
+        subTotolItem();
+    }
+    function onMouseOver(incDec){
+        incDec.classList.remove('hidden');
+        incDec.classList.add('visible');
+    }
+    function onMouseOut(incDec){
+        incDec.classList.remove('visible');
+        incDec.classList.add('hidden');
+    }
+
+    function funIncPlus(elem, index, itemCount, incDecMiddle){
+        var temp = cartData[index].count+1;
+        cartData[index].count = cartData[index].count+1;
+        itemCount.innerText = temp;
+        incDecMiddle.innerText = `${temp} ct`;
+        console.log(index, elem);
+        localStorage.setItem("cartItem", JSON.stringify(cartData));
+        subTotolItem();
+    }
+    function funIncMinus(elem, index, itemCount, incDecMiddle){
+        if(cartData[index].count == 1){
+            removeItem1(elem, index);
+        }
+        else{
+            var temp = cartData[index].count-1;
+            cartData[index].count = cartData[index].count-1;
+            itemCount.innerText = temp;
+            incDecMiddle.innerText = `${temp} ct`;
+            console.log(index, elem);
+            localStorage.setItem("cartItem", JSON.stringify(cartData));
+        }
+        
+        subTotolItem();
+    }
+    function subTotolItem(){
+        var total = cartData.reduce((total, ele)=>{
+            return total + (ele.count * (ele.elem.price))
+        },0)
+        var numberOfItem = cartData.reduce((total, ele)=>{
+            return total + ele.count;
+        },0)
+        payAmt.innerText = `$ ${total.toFixed(2)}`;
+        document.querySelector(".total").innerText = ` Total Items (${numberOfItem}) Subtotal $ (${total.toFixed(2)})`;
+    }
+    function goDeliveryFun(){
+        window.location.href = 'checkout.html';
+    }
+
+    displayCart();
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+</head>
+<body>
+   <div style="height: auto;width: auto;margin: auto;box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;background-color:skyblue;">
+    <form action="" style="padding-left: 11%">
+        <img src="https://spareshub.com/pub/media/logo/stores/1/200x50xlogo.png.pagespeed.ic.3_mBb67eog.webp" alt="">
+     <!-- <h1><u>Payment Form</u></h1> -->
+        <h2>User Details</h2>
+        <p>
+            Name:
+            <input type="text" name="name" id="name" required />
+
+  </p>
+  <fieldset>
+  <p>
+      <legend>Gender</legend>
+
+      <input type="radio" name="gender" value="Male" >Male
+      <input type="radio" name="gender" value="Female">Female
+  </p>
+  </fieldset>
+  <p>
+    <!-- <legend> Address:</legend>  -->
+
+
+
+
+
+     <legend>Address:-</legend>
+    <textarea cols="90" rows="2"></textarea>  
+  </p>
+  <p>
+      Email:
+      <input type="email" name="email" required>
+  </p>
+  <p>
+      Pincode:
+      <input type="number" name="pincode" required>
+  </p>
+  <h2>
+      Payment details
+  </h2>
+  <p>Card type:
+     <select name="cardtype" id="cardtype" value="Select your card" required>
+         <option value="">--Select your payment method--</option>
+         <option value="VISA">VISA</option>
+         <option value="MasterCard">MasterCard</option>
+         <option value="Debit card">Debit Card</option>
+         <option value="Paypal">Paypal</option>
+         
+     </select>
+  </p>
+  <p>Card number:
+      <input type="number" name="cardnumber" id="cnum">
+    </p>
+    <p>
+        Expiration Date:
+        <input type="date" name="dates" id="dates">
+    </p>
+    <p>CVV:
+        <input type="number">
+    </p>
+    <p>
+        <input type="submit" name="submitbtn" value="Pay now">
+
+        <input type="reset" name="restbtn" value="Reset">
+    </p>
+  
+    </form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<script src="https://kit.fontawesome.com/39dce68ee5.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    #container {
+        /* border: 2px solid black; */
+        height: auto;
+        width: 600px;
+        margin: auto;
+        padding: 5px 5px 5px 5px;
+        /* padding-bottom: 25px; */
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        padding: 0px 11px;
+
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid black;
+        padding: 12px;
+        margin-top: 15px;
+        border: 1px solid red;
+     
+
+
+    }
+
+    input[type="submit"] {
+        margin-left: 43%;
+        cursor: pointer;
+        padding: 5px;
+        width: auto;
+        margin:11px 43%;
+
+
+    }
+
+    input[type="submit"]:hover {
+        background-color:red;
+        color: white;
+    
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div id="container">
+
+        <form action="" id="form">
+            <h1><img src="https://spareshub.com/pub/media/logo/stores/1/200x50xlogo.png.pagespeed.ic.3_mBb67eog.webp" alt=""></h1>
+            <p>            <i class="fas fa-user"></i> <label for="">Full name</label>
+
+            </p>
+<p>
+    <input type="text" id="name" placeholder="Enter your full name" required>
+
+</p>            
+            <i class="fas fa-envelope"></i> <label for="">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            
+                 <br>
+           <p><i class="fas fa-asterisk"> </i> <label for="">Password</label></p> 
+
+            <input type="password" id="password" placeholder="Enter password" required>
+            <br>
+
+            <input type="submit" id="submit" placeholder="SIGN UP" value="Sign up" required>
+        </form>
+        <h2 style="font-family: 'Ubuntu', sans-serif;margin-left: 45%;">OR</h2>
+        <p  style="color: red;margin-left: 35%;margin: 11px 35%;padding-bottom: 11px;cursor: pointer;"><i class="fab fa-facebook-square"> </i> Signup with Facebook</p>
+        <p style="color: red;margin-left: 35%;margin: 11px 35%;padding-bottom: 11px;cursor: pointer;"><i class="fab fa-google"></i> Signup with Google</p>
+        <p style="color: red;margin-left: 35%;margin: 11px 35%;padding-bottom: 11px;cursor: pointer;"><i class="fab fa-github"></i> Signup with Github</p>
+    </div>
+
+    <center>
+        <p style="color: #0088cc;">Have your already created the account? Then <a
+                style="text-decoration: none;box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;padding: 7px;border-radius: 2px;font-family: 'Open Sans', sans-serif;font-weight: bold;"
+                href="signin.html">Login...</a> </p>
+    </center>
+</body>
+<script>
+    document.querySelector("form").addEventListener("submit", fun)
+    var datas = JSON.parse(localStorage.getItem("userdata")) || [];
+
+    function fun() {
+        event.preventDefault()
+        var data = {
+            a: document.getElementById("name").value,
+            b: document.getElementById("email").value,
+            c: form.password.value,
+        }
+        datas.push(data)
+        console.log(datas)
+        localStorage.setItem("userdata", JSON.stringify(datas));
+        alert("Signup succesfully")
+        window.location.href = "signin.html"
+    }
+</script>
+
+</html>
