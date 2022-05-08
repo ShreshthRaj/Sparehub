@@ -67,8 +67,10 @@
         <input type="number">
     </p>
     <p>
-        <input type="submit" name="submitbtn" value="Pay now">
+        <input onclick="h()" type="submit" name="submitbtn" value="Pay now">
+        <a href="success.html"><button>PAY NOW</button></a>
 
+ 
         <input type="reset" name="restbtn" value="Reset">
     </p>
   
@@ -76,3 +78,8 @@
    </div>
 </body>
 </html>
+<script>
+  function h(){
+      window.location.href="success.html"
+  }
+</script>

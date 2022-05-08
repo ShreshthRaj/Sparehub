@@ -263,11 +263,73 @@ display: flex;
     margin-left: 11px;
 
 }
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+#caption{
+    position:absolute;
+    top: 251px;
+    left: 51px;
+    font-size: 70px;
+     opacity: 100%;
+     color:white;
+     font-weight: bold;
+    
+     font-family:'Open Sans', sans-serif;
+     
+}
+h1{
+    /* position: absolute; */
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #252839;
+    text-shadow: 0 0 0.3vw #383d52;
+    text-transform: uppercase;
+    user-select: none;
+}
+h1:before{
+    content: attr(title);
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color:teal;
+    text-shadow: 0 0 0.3vw #383d52;
+    /* border-right: 2px solid #01fe87; */
+    overflow: hidden;
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate{
+    0%,10%,100%{
+        width: 0;
+    }
+    70%,90%{
+        width: 100%;
+    }
+}
 
 #thumbnail {
-    margin: 15px 0px;
+    margin: 15px 7px;
     padding: 0px 5px;
-    width: 100%;
+    /* width: 100%; */
+    height: 800px;
+    width: 98%;
+
+      /* height: 400px;
+      width: 400px; */
+      /* margin-top: 51px; */
+}
+#capa{
+    cursor: pointer;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#capa:hover{
+    background-color: red;
+    box-shadow: #777777;
+    border: 15px;
+    transition: 0.5s ease-out
+
 }
 
 #brands {
@@ -282,15 +344,15 @@ display: flex;
 
 #brands>div>img {
     height: 96px;
-    width: 96px;
-    border-radius: 50%;
+    width: 121px;
+    border-radius:80%;
     transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)
 }
-#brands div:hover img{
+/* #brands div img:hover {
     width: 105%;
     
 
-}
+} */
 
 #facility {
     display: grid;
@@ -364,6 +426,7 @@ color: goldenrod;
     color: white;
 }
 
+
 #testimonials {
     display: flex;
     height: 300px;
@@ -399,7 +462,7 @@ color: goldenrod;
 
 #testimonials>div>div {
     margin-right: 100px;
-    margin-top: -69px;
+    margin-top: -51px;
 
 
 }
